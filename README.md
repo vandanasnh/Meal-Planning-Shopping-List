@@ -8,7 +8,7 @@ shopping.
 its design is opinionated how I perform my meal planning and grocery shopping
 in the last years.
 
-![Screenshot of the home page](https://bitbucket.org/juriansluiman/groceri.es/raw/540b866f193c0b8aea1577c645b8a80d10de5f67/docs/screenshot.png)
+![Screenshot of the home page](https:/screenshot.png)
 
 ## Functional design
 The basic idea is you do you  weekly and plan the meals ahead for that
