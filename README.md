@@ -85,7 +85,7 @@ the meal, the meal scheduler will provide the recipe for you. If you don't have
 a recipe but you know what to eat, you can simply enter a title of the meal. For
 later reference, you can add a note which help you memorize what to prepare.
 
-Note that groceri.es is not opinionated on the time the meal is planned or the
+Note that the app is not opinionated on the time the meal is planned or the
 amount of meals you plan at a certain day. This enables users to plan breakfast,
 lunch and/or dinner. Or, you can schedule a starter, main course, side
 dish and desert at the same day for a large menu. 
