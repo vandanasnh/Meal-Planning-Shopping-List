@@ -1,18 +1,17 @@
-# groceri.es
+# Meal Planning Shopping-List
 
-This repository contains all source code for hosting your own groceri.es app.
-groceri.es is a webapplication to manage your own recipes, planning your meals
-for the week and it automatically creates a groceries list for you to do
+This repository contains all source code for hosting your own Shopping list app.
+It is a webapplication to manage your own recipes, planning your meals
+for the week and it automatically creates a  list for you to do
 shopping.
 
-groceri.es is built by [Jurian Sluiman](https://jurian.slui.mn) and its design 
-of groceri.es is opinionated how I perform my meal planning and grocery shopping
+its design is opinionated how I perform my meal planning and grocery shopping
 in the last years.
 
 ![Screenshot of the home page](https://bitbucket.org/juriansluiman/groceri.es/raw/540b866f193c0b8aea1577c645b8a80d10de5f67/docs/screenshot.png)
 
 ## Functional design
-The basic idea is you do you groceries weekly and plan the meals ahead for that
+The basic idea is you do you  weekly and plan the meals ahead for that
 week. You can skip days if you plan to eat outdoors, this is your planning for
 meals you cook yourself. 
 
@@ -28,7 +27,7 @@ When you haven't a recipe entered but know what meal you want to schedule at a
 certain day, you can enter it as free text yourself at that day. You can also
 provide short notes which can act as guidelines for the meal prep itself. Please
 be aware when you schedule meals manually this way, no ingredients are mapped so
-you have to add those to the groceries yourself.
+you have to add those to the  yourself.
 
 The process above is set out in a functional flow diagram below:
 
@@ -37,10 +36,10 @@ The process above is set out in a functional flow diagram below:
 ### Pantry
 Some ingredients are part of you pantry and you buy them in bulk. groceri.es will
 automatically map those for you. When you plan a recipe, the pantry items are
-assumed to be available and not added to your groceries list. As part of above
+assumed to be available and not added to your  list. As part of above
 flow chart, mind you have to check your pantry and make sure all pantry items as
 ingredient are present. If you haven't enough stock, just select the pantry item
-to add those to your groceries. 
+to add those to your . 
 
 ### Servings
 A recipe has a default servings. You are able to change the servings when you
@@ -105,7 +104,7 @@ the grocery list.
 
 Another set of items are the products from your pantry. You can enter pantry
 items yourself, but they can be linked from recipes. When you schedule a recipe,
-the pantry items won't be added to your groceries automatically, since it is
+the pantry items won't be added to your  automatically, since it is
 assumed you have plenty in stock. 
 
 ## Source code and software dependencies
@@ -137,16 +136,16 @@ image yourself with the source code.
 
 Clone the repository first to your local machine
 
-    git clone https://github.com/juriansluiman/groceri.es
+    git clone https://github.com/vandana/Meal-Planning-Shopping-List
 
 Create the docker image from source
 
-    docker build -t groceri.es .
+    docker build -t Meal-Planning-Shopping-List .
 
 ### Run the container
 To run an image which you just created, it simply is `docker run`:
 
-    docker run -d --name groceri.es -p 80:80 -e SECRET_KEY='my-secret-here' groceri.es
+    docker run -d --name groceri.es -p 80:80 -e SECRET_KEY='my-secret-here' Meal-Planning-Shopping-List
 
 This will spin up nginx inside the container and will serve the site at port 80
 on your host machine. If you want to use a different port, for example 1234, 
@@ -158,8 +157,8 @@ If you need to run Flask in development setup, you can use the below command to
 run it with the built in webserver. Mind this is not meant to scale for
 production!
 
-    docker run -d --rm --name groceri.es -p 1234:80 -v $(pwd)/app:/app \
-     -e FLASK_APP=app.py -e FLASK_DEBUG=1 -e SECRET_KEY='my-secret-here' groceri.es \
+    docker run -d --rm --name Meal-Planning-Shopping-List -p 1234:80 -v $(pwd)/app:/app \
+     -e FLASK_APP=app.py -e FLASK_DEBUG=1 -e SECRET_KEY='my-secret-here' Meal-Planning-Shopping-List \
      flask run --host=0.0.0.0 --port=80
 
 ### Run outside the container
@@ -212,8 +211,8 @@ You can persits the database storage in several ways:
 Create a docker volume and mount the volume at `/app/db` so the database file
 will be created inside the mounted volume.
 
-    docker volume create groceries-db
-    docker run -d --name groceri.es -v groceries-db:/app/db -e SECRET_KEY='my-secret-here' -p 80:80 groceri.es
+    docker volume create Meal-Planning-Shopping-List-db
+    docker run -d --name groceri.es -v Meal-Planning-Shopping-List-db:/app/db -e SECRET_KEY='my-secret-here' -p 80:80 groceri.es
 
 **Use a SQL server**
 
@@ -231,16 +230,16 @@ application container and change it's `SQLALCHEMY_DATABASE_URI` key with the
 new database server. The format of the URI is
 `dialect+driver://username:password@host:port/database`.
 
-    docker run -d --name groceries-db \
+    docker run -d --name Meal-Planning-Shopping-List-db \
         -e MYSQL_RANDOM_ROOT_PASSWORD='yes' \
-        -e MYSQL_DATABASE='groceries' \
-        -e MYSQL_USER='groceries' \
+        -e MYSQL_DATABASE='Meal-Planning-Shopping-List' \
+        -e MYSQL_USER='Meal-Planning-Shopping-List' \
         -e MYSQL_PASSWORD='my-random-password' \
         mysql:8.0
 
     docker run -d --name groceri.es -p 80:80 \
-        --link groceries-db \
-        -e SQLALCHEMY_DATABASE_URI='mysql+pymysql://groceries:my-random-password@groceries-db/groceries?charset=utf8mb4' \
+        --link Meal-Planning-Shopping-List-db \
+        -e SQLALCHEMY_DATABASE_URI='mysql+pymysql://Meal-Planning-Shopping-List:my-random-password@Meal-Planning-Shopping-List-db/Meal-Planning-Shopping-List?charset=utf8mb4' \
         -e -e SECRET_KEY='my-secret-here' \
         groceri.es
 
