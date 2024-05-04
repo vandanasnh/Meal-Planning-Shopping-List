@@ -225,7 +225,7 @@ msgstr ""
 
 #: templates/settings.html:161
 msgid ""
-"groceri.es is a self-hosted webapplication to help catalogue your "
+" this app is a self-hosted webapplication to help catalogue your "
 "recipes, schedule your meals during the week and create shopping lists "
 "for groceries based on your meal planning."
 msgstr ""
@@ -240,7 +240,7 @@ msgstr ""
 
 #: templates/settings.html:165
 msgid ""
-"groceri.es runs in a  a docker container you can host by yourself. The "
+"app runs in a  a docker container you can host by yourself. The "
 "code is open source and using Flask and Fomantic UI."
 msgstr ""
 
