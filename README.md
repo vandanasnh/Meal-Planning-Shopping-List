@@ -136,7 +136,7 @@ image yourself with the source code.
 
 Clone the repository first to your local machine
 
-    git clone https://github.com/vandana/Meal-Planning-Shopping-List
+   git clone https://github.com/vandanasnh/Meal-Planning-Shopping-List
 
 Create the docker image from source
 
