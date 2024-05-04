@@ -8,7 +8,7 @@ shopping.
 its design is opinionated how I perform my meal planning and grocery shopping
 in the last years.
 
-![Screenshot of the home page](https:/screenshot.png)
+![Screenshot of the home page](https://github.com/vandanasnh/Meal-Planning-Shopping-List/blob/main/docs/screenshot.png)
 
 ## Functional design
 The basic idea is you do you  weekly and plan the meals ahead for that
